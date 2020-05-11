@@ -6,28 +6,21 @@
       - [Wes Bos - JavaScript30](https://javascript30.com/)
          - [Wes Bos - Mastering Markdown](https://masteringmarkdown.com/)
          - [Wes Bos - Comand Line Power User](https://commandlinepoweruser.com)
-   - Network Fundamentals
-      - Bibles
-         - [TCP IP Illustrated Volume 1 - The Protocols - W. Richard Stevens](https://github.com/AlexGalhardo/Learning-JavaScript/tree/master/Bibles)
-         - [TCP IP Illustrated Volume 2 - The Implementation - W. Richard Stevens](https://github.com/AlexGalhardo/Learning-JavaScript/tree/master/Bibles)
-         - [TCP IP Illustrated Volume 3 - Transactions, HTTP, NNTP, and the UNIX Domain Protocols - W. Richard Stevens](https://github.com/AlexGalhardo/Learning-JavaScript/tree/master/Bibles)
-         - [O'Reilly - DNS and BIND - 5th Edition.pdf](https://github.com/AlexGalhardo/Learning-JavaScript/tree/master/Bibles)
-         - [O'Reilly HTTP: The Definitive Guide](https://github.com/AlexGalhardo/Learning-JavaScript/blob/master/EBOOK%20-%20O'Reilly%20-%20HTTP%20-%20The%20Definitive%20Guide.pdf)
-      - Casa do Código
-         - [Desconstruindo a Web - As Tecnologias Por Trás de uma Requisição - Willian Molinari](https://www.casadocodigo.com.br/products/livro-desconstruindo-web)
-      - Sites
-         - [Web Fundamentals Google Developers](https://developers.google.com/web/fundamentals/)
-         - [High Performance Browser Networking - Ilya Grigorik](https://hpbn.co/)
-      - Articles
-         - [How browsers work - Behind the scenes of modern web browsers - Tali Garsiel's](http://taligarsiel.com/Projects/howbrowserswork1.htm) :heart: :heart: :heart:
-            - [Como os browsers processam seu HTML e CSS?](https://www.youtube.com/watch?v=OYQuPaGiQ6A)
-         - [Inside look at modern web browser (part 1)](https://developers.google.com/web/updates/2018/09/inside-browser-part1)
-         - [Inside look at modern web browser (part 2)](https://developers.google.com/web/updates/2018/09/inside-browser-part2)
-         - [Inside look at modern web browser (part 3)](https://developers.google.com/web/updates/2018/09/inside-browser-part3)
-         - [Inside look at modern web browser (part 4)](https://developers.google.com/web/updates/2018/09/inside-browser-part4)
-      - DNSimple
-         - [How HTTPS Works](https://howhttps.works/)
-         - [How DNS Works](https://howdns.works/)
+   - Casa do Código
+      - [Desconstruindo a Web - As Tecnologias Por Trás de uma Requisição - Willian Molinari](https://www.casadocodigo.com.br/products/livro-desconstruindo-web)
+   - Sites
+      - [Web Fundamentals Google Developers](https://developers.google.com/web/fundamentals/)
+      - [High Performance Browser Networking - Ilya Grigorik](https://hpbn.co/)
+   - Articles
+      - [How browsers work - Behind the scenes of modern web browsers - Tali Garsiel's](http://taligarsiel.com/Projects/howbrowserswork1.htm)
+        - [Como os browsers processam seu HTML e CSS?](https://www.youtube.com/watch?v=OYQuPaGiQ6A)
+      - [Inside look at modern web browser (part 1)](https://developers.google.com/web/updates/2018/09/inside-browser-part1)
+      - [Inside look at modern web browser (part 2)](https://developers.google.com/web/updates/2018/09/inside-browser-part2)
+      - [Inside look at modern web browser (part 3)](https://developers.google.com/web/updates/2018/09/inside-browser-part3)
+      - [Inside look at modern web browser (part 4)](https://developers.google.com/web/updates/2018/09/inside-browser-part4)
+   - DNSimple
+      - [How HTTPS Works](https://howhttps.works/)
+      - [How DNS Works](https://howdns.works/)
    - APIs
      - [Insomnia](https://insomnia.rest/download/)
      - [Postman](https://www.getpostman.com/)
@@ -89,7 +82,6 @@
 
  - GitHub
     - [JS The Right Away](https://github.com/braziljs/js-the-right-way)
-    - [Coding Style - LFeh](https://github.com/LFeh/coding-style)
     - [JavaScript Style Guide - AirBnb](https://github.com/airbnb/javascript)
  - Sites
     - [StandardJS](https://standardjs.com/)
@@ -159,11 +151,8 @@
     - [Udacity - Otimização de Renderização no Browser by Google - Construindo Apps de 60FPS](https://br.udacity.com/course/browser-rendering-optimization--ud860)
  - Sites
     - [Browser Diet](https://browserdiet.com/)
-    - [Técnicas para melhoria de performance em aplicações web no lado do cliente - Monografia Zeno Rocha](https://www.slideshare.net/slideshow/embed_code/key/gFzMzXDYZg9Vna)
     - [Client Side Performance](http://taligarsiel.com/ClientSidePerformance.html)
     - [Why Perfomance Matters - Google Developers](https://developers.google.com/web/fundamentals/performance/why-performance-matters/)
-    - [William Justen - Perfomance Web](https://willianjusten.com.br/series/)
-    - [Research SpeedReader: Fast and Private Reader Mode for the Web](https://brave.com/speed-reader/)
  - Tools
     - [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
     - [LightHouse](https://developers.google.com/web/tools/lighthouse/#devtools)
@@ -171,8 +160,6 @@
     - [Tools Pingdom](https://tools.pingdom.com/)
     - [GTMetrix](https://gtmetrix.com/)
     - [Web.dev](https://web.dev/measure)
- - Books
-    - [Even Faster Web Sites: Performance Best Practices for Web Developers](https://www.amazon.com/Even-Faster-Web-Sites-Performance/dp/0596522304)
 
 ## HTTP Methods
  
