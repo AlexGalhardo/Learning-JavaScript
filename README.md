@@ -1,5 +1,4 @@
 ## References
-
    - Courses
       - [Origamid - JavaScript Completo ES6+](https://www.origamid.com/slide/javascript-completo-es6/#/1-1-o-curso/1)
       - [FreeCodeCamp](https://www.freecodecamp.org/) 
@@ -275,3 +274,596 @@ This means that even though the request appeared to be valid something went wron
 - [511](http://httpstatus.es/511) - **Network Authentication Required** - Client needs to authenticate to gain network access.
 - [598](http://httpstatus.es/598) - **Network Read Timeout Error** - Network read timeout behind the proxy.
 - [599](http://httpstatus.es/599) - **Network Connect Timeout Error** - Network connect timeout behind the proxy.
+
+
+
+## JavaScript Básico
+
+- VARIÁVEIS
+   - Responsáveis por guardar dados na memória.
+   - Inicia com a palavra var, let ou const
+```js
+var nome = 'André';
+let idade = 28;
+const possuiFaculdade = true;
+COPIAR
+EVITAM REPETIÇÕES
+DRY (Don't repeat yourself)
+
+var preco = 20;
+var totalComprado = 5;
+var precoTotal = preco * totalComprado;
+```
+
+- SINTAXE
+   - Palavra chave var seguida do nome, sinal de igual e o valor.
+```js
+var nome = 'André';
+var idade = 28;
+var possuiFaculdade = true;
+```
+
+- VÍRGULA
+   - Utilizei a vírgula para criar mais de uma variável, sem repetir a palavra chave var.
+```js
+var nome = 'André',
+    idade = 28,
+    possuiFaculdade = true;
+```
+
+- SEM VALOR
+   - Pode declarar ela e não atribuir valor inicialmente.
+```js
+var precoAplicativo;
+// retorna undefined
+```
+
+- NOME
+   - Os nomes podem iniciar com $, _, ou letras.
+   - Podem conter números mas não iniciar com eles
+   - Case sensitive
+      - nome é diferente de Nome
+   - Não utilizar palavras reservadas
+   - https://www.w3schools.com/js/js_reserved.asp
+   - Camel case
+      - É comum nomearmos assim: abrirModal
+```js
+NOME
+// Inválido
+var §nome;
+var function;
+var 1possuiFaculdade;
+
+// Válido
+var $selecionar;
+var _nome;
+var possuiFaculdadeNoExterior;
+```
+
+- DECLARAR
+   - Erro ao tentar utilizar uma variável que não foi declarada.
+```js
+console.log(nome);
+// retorna nome is not defined
+```
+
+- HOISTING
+   - São movidas para cima do código, porém o valor atribuído não é movido.
+```js
+console.log(nome);
+var nome = 'André';
+// Retorna undefined
+
+var profissao = 'Designer';
+console.log(profissao);
+// Retornar Designer
+```
+
+- MUDAR O VALOR ATRIBUÍDO
+   - É possível mudar os valores atribuídos a variáveis declaradas com var e let. Porém não é possível modificar valores das declaradas com const
+```js
+var idade = 28;
+idade = 29;
+
+let preco = 50;
+preco = 25;
+
+const possuiFaculdade = true;
+possuiFaculdade = false;
+// Retorna um erro
+```
+
+- 7 TIPOS DE DADOS
+   - Todos são primitivos exceto os objetos.
+```js
+var nome = 'André'; // String
+var idade = 28; // Number
+var possuiFaculdade = true; // Boolean
+var time; // Undefined
+var comida = null; // Null
+var simbolo = Symbol() // Symbol
+var novoObjeto = {} // Object
+```
+
+- Primitivos são dados imutáveis.
+```js
+VERIFICAR TIPO DE DADO
+var nome = 'André';
+console.log(typeof nome);
+// retorna string
+```
+
+- typeof null retorna object
+
+- STRING
+   - Você pode somar uma string e assim concatenar as palavras.
+```js
+var nome = 'André';
+var sobrenome = 'Rafael';
+var nomeCompleto = nome + ' ' + sobrenome;
+```
+
+- STRING
+   - Você pode somar números com strings, o resultado final é sempre uma string.
+```js
+var gols = 1000;
+var frase = 'Romário fez ' + gols + ' gols';
+COPIAR
+ASPAS DUPLAS, SIMPLES E TEMPLATE STRING
+'JavaScript é "super" fácil';
+"JavaScript é 'super' fácil";
+"JavaScript é \"super\" fácil";
+`JavaScript é "super" fácil"`;
+"JavaScript é "super" fácil"; // Inválido
+```
+   - Não necessariamente precisamos atribuir valores a uma variável
+
+
+- TEMPLATE STRING
+```js
+var gols = 1000;
+var frase1 = 'Romário fez ' + gols + ' gols';
+var frase2 = `Romário fez ${gols} gols`; // Utilizando Template String
+```
+   - Você deve passar expressões / variáveis dentro de ${}
+
+
+## JavaScript Assíncrono
+
+- SÍNCRONO VS ASSÍNCRONO
+   - Síncrono
+      - Espera a tarefa acabar para continuar com a próxima.
+   - Assíncrono
+      - Move para a próximo tarefa antes da anterior terminar. O trabalho será executado no 'fundo' e quando terminado, será colocado na fila (Task Queue).
+      - Exemplos
+         - setTimeout, Ajax, Promises, Fetch, Async.
+
+- NEW PROMISE()
+   - Promise é uma função construtora de promessas. 
+   - Existem dois resultados possíveis de uma promessa, ela pode ser resolvida, com a execução do primeiro argumento, ou rejeitada se o segundo argumento for ativado.
+
+```js
+const promessa = new Promise(function(resolve, reject) {
+  let condicao = true;
+  if(condicao) {
+    resolve();
+  } else {
+    reject();
+  }
+});
+
+console.log(promessa); // Promise {<resolved>: undefined}
+```
+
+- RESOLVE()
+   - Podemos passar um argumento na função resolve(), este será enviado junto com a resolução da Promise.
+
+```js
+const promessa = new Promise(function(resolve, reject) {
+  let condicao = true;
+  if(condicao) {
+    resolve('Estou pronto!');
+  } else {
+    reject();
+  }
+});
+
+console.log(promessa); // Promise {<resolved>: "Estou pronto!"}
+```
+
+- REJECT()
+   - Quando a condição de resolução da promise não é atingida, ativamos a função reject para rejeitar a mesma. 
+   - Podemos indicar no console um erro, informando que a promise foi rejeitada.
+```js
+const promessa = new Promise(function(resolve, reject) {
+  let condicao = false;
+  if(condicao) {
+    resolve('Estou pronto!');
+  } else {
+    reject(Error('Um erro ocorreu.'));
+  }
+});
+
+console.log(promessa); // Promise {<rejected>: Error:...}
+```
+
+- THEN()
+   - O poder das Promises está no método then() do seu protótipo.
+   - O Callback deste método só será ativado quando a promise for resolvida. 
+   - O argumento do callback será o valor passado na função resolve.
+```js
+const promessa = new Promise(function(resolve, reject) {
+  let condicao = true;
+  if(condicao) {
+    resolve('Estou pronto!');
+  } else {
+    reject(Error('Um erro ocorreu.'));
+  }
+});
+
+promessa.then(function(resolucao) {
+  console.log(resolucao); // 'Estou pronto!'
+});
+```
+
+- ASSÍNCRONO
+   - As promises não fazem sentido quando o código executado dentro da mesma é apenas código síncrono. 
+   - O poder está na execução de código assíncrono que executará o resolve() ao final dele.
+```js
+const promessa = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('Resolvida');
+  }, 1000);
+});
+
+promessa.then(resolucao => {
+  console.log(resolucao); // 'Resolvida' após 1s
+});
+```
+
+- THEN().THEN()
+   - O método then() retorna outra Promise. Podemos colocar then() após then() e fazer um encadeamento de promessas. 
+   - O valor do primeiro argumento de cada then, será o valor do retorno anterior.
+```js
+const promessa = new Promise((resolve, reject) => {
+  resolve('Etapa 1');
+});
+
+promessa.then(resolucao => {
+  console.log(resolucao); // 'Etapa 1';
+  return 'Etapa 2';
+}).then(resolucao => {
+  console.log(resolucao) // 'Etapa 2';
+  return 'Etapa 3';
+}).then(r => r + 4)
+.then(r => {
+  console.log(r); // Etapa 34
+});
+```
+
+- CATCH()
+   - O método catch(), do protótipo de Promises, adiciona um callback a promise que será ativado caso a mesma seja rejeitada.
+```js
+const promessa = new Promise((resolve, reject) => {
+  let condicao = false;
+  if(condicao) {
+    resolve('Estou pronto!');
+  } else {
+    reject(Error('Um erro ocorreu.'));
+  }
+});
+
+promessa.then(resolucao => {
+  console.log(resolucao);
+}).catch(reject => {
+  console.log(reject);
+});
+```
+
+- THEN(RESOLVE, REJECT)
+   - Podemos passar a função que será ativada caso a promise seja rejeitada, direto no método then, como segundo argumento.
+```js
+const promessa = new Promise((resolve, reject) => {
+  let condicao = false;
+  if(condicao) {
+    resolve('Estou pronto!');
+  } else {
+    reject(Error('Um erro ocorreu.'));
+  }
+});
+
+promessa.then(resolucao => {
+  console.log(resolucao);
+}, reject => {
+  console.log(reject);
+});
+```
+
+- FINALLY()
+   - finally() executará a função anônima assim que a promessa acabar.
+   - A diferença do finally é que ele será executado independente do resultado, se for resolvida ou rejeitada.
+```js
+const promessa = new Promise((resolve, reject) => {
+  let condicao = false;
+  if(condicao) {
+    resolve('Estou pronto!');
+  } else {
+    reject(Error('Um erro ocorreu.'));
+  }
+});
+
+promessa.then(resolucao => {
+  console.log(resolucao);
+}, reject => {
+  console.log(reject);
+}).finally(() => {
+  console.log('Acabou'); // 'Acabou'
+});
+```
+
+- PROMISE.ALL()
+   - Retornará uma nova promise assim que todas as promises dentro dela forem resolvidas ou pelo menos uma rejeitada. 
+   - A reposta é uma array com as respostas de cada promise.
+```js
+const login = new Promise(resolve => {
+  setTimeout(() => {
+    resolve('Login Efetuado');
+  }, 1000);
+});
+const dados = new Promise(resolve => {
+  setTimeout(() => {
+    resolve('Dados Carregados');
+  }, 1500);
+});
+
+const tudoCarregado = Promise.all([login, dados]);
+
+tudoCarregado.then(respostas => {
+  console.log(respostas); // Array com ambas respostas
+});
+```
+
+- PROMISE.RACE()
+   - Retornará uma nova promise assim que a primeira promise for resolvida ou rejeitada. Essa nova promise terá a resposta da primeira resolvida.
+```js
+const login = new Promise(resolve => {
+  setTimeout(() => {
+    resolve('Login Efetuado');
+  }, 1000);
+});
+const dados = new Promise(resolve => {
+  setTimeout(() => {
+    resolve('Dados Carregados');
+  }, 1500);
+});
+
+const carregouPrimeiro = Promise.race([login, dados]);
+
+carregouPrimeiro.then(resposta => {
+  console.log(resposta); // Login Efetuado
+});
+```
+
+- FETCH API
+   - Permite fazermos requisições HTTP através do método fetch(). Este método retorna a resolução de uma Promise. Podemos então utilizar o then para interagirmos com a resposta, que é um objeto do tipo Response.
+```js
+fetch('./arquivo.txt').then(function(response) {
+  console.log(response); // Response HTTP (Objeto)
+});
+```
+
+- RESPONSE
+   - O objeto Response, possui um corpo com o conteúdo da resposta. Esse corpo pode ser transformado utilizando métodos do protótipo do objeto Response. Estes retornam outras promises.
+```js
+fetch('./arquivo.txt').then(function(response) {
+  return response.text();
+}).then(function(corpo) {
+  console.log(corpo);
+});
+```
+
+- SERVIDOR LOCAL
+   - O fetch faz uma requisição HTTP/HTTPS. Se você iniciar um site local diretamente pelo index.html, sem um servidor local, o fetch não irá funcionar.
+```js
+fetch('c:/files/arquivo.txt')
+.then((response) => {
+  return response.text();
+})
+.then((corpo) => {
+  console.log(corpo);
+}); // erro
+```
+
+   - Se dermos um espaço após o objeto ou pularmos linha, o método continua funcionando.
+
+- .JSON()
+   - Um tipo de formato de dados muito utilizado com JavaScript é o JSON (JavaScript Object Notation), pelo fato dele possuir basicamente a mesma sintaxe que a de um objeto js. .json() transforma um corpo em json em um objeto JavaScript.
+```js
+fetch('https://viacep.com.br/ws/01001000/json/')
+.then(response => response.json())
+.then(cep => {
+  console.log(cep.bairro, cep.logradouro);
+});
+```
+
+- .TEXT()
+   - Podemos utilizar o .text() para diferentes formatos como txt, json, html, css, js e mais.
+
+```js
+const styleElement = document.createElement('style');
+
+fetch('./style.css')
+.then(response => response.text())
+.then(style => {
+  styleElement.innerHTML = style;
+  document.body.appendChild(styleElement);
+});
+```
+
+- HTML E .TEXT()
+   - Podemos pegar um arquivo inteiro em HTML, transformar o corpo em texto e inserir em uma div com o innerHTML. A partir dai podemos manipular esses dados como um DOM qualquer.
+```js
+const div = document.createElement('div');
+
+fetch('./sobre.html')
+.then(response => response.text())
+.then(htmlBody => {
+  div.innerHTML = htmlBody;
+  const titulo = div.querySelector('h1');
+  document.querySelector('h1').innerText = titulo.innerText;
+});
+```
+
+- .BLOB()
+   - Um blob é um tipo de objeto utilizado para representação de dados de um arquivo. O blob pode ser utilizado para transformarmos requisições de imagens por exemplo. O blob gera um URL único.
+```js
+const div = document.createElement('div');
+
+fetch('./imagem.png')
+.then(response => response.blob())
+.then(imgBlob => {
+  const blobUrl = URL.createObjectURL(imgBlob);
+  console.log(blobUrl);
+});
+```
+
+- .CLONE()
+   - Ao utilizarmos os métodos acima, text, json e blob, a resposta é modificada. Por isso existe o método clone, caso você necessite transformar uma resposta em diferentes valores.
+```js
+const div = document.createElement('div');
+
+fetch('https://viacep.com.br/ws/01001000/json/')
+.then(response => {
+  const cloneResponse = response.clone();
+  response.json().then(json => {
+    console.log(json)
+  });
+  cloneResponse.text().then(text => {
+    console.log(text)
+  });
+});
+```
+
+- .HEADERS
+   - É uma propriedade que possui os cabeçalhos da requisição. É um tipo de dado iterável então podemos utilizar o forEach para vermos cada um deles.
+```js
+const div = document.createElement('div');
+
+fetch('https://viacep.com.br/ws/01001000/json/')
+.then(response => {
+  response.headers.forEach(console.log);
+});
+```
+
+- .STATUS E .OK
+   - Retorna o status da requisição. Se foi 404, 200, 202 e mais. ok retorna um valor booleano sendo true para uma requisição de sucesso e false para uma sem sucesso.
+```js
+const div = document.createElement('div');
+
+fetch('https://viacep.com.br/ws/01001000/json/')
+.then(response => {
+  console.log(response.status, response.ok);
+  if(response.status === 404) {
+    console.log('Página não encontrada')
+  }
+});
+```
+
+- .URL E .TYPE
+   - .url retorna o url da requisição. .type retorna o tipo da reposta.
+```js
+const div = document.createElement('div');
+
+fetch('https://viacep.com.br/ws/01001000/json/')
+.then(response => {
+  console.log(response.type, response.url);
+});
+
+//types
+// basic: feito na mesma origem
+// cors: feito em url body pode estar disponível
+// error: erro de conexão
+// opaque: no-cors, não permite acesso de outros sites
+```
+
+- JSON
+   - JavaScript Object Notation (JSON) é um formato de organização de dados, compostos por um conjunto de chave e valor. As aspas duplas são obrigatórias, tanto na chave quanto no valor quando este for uma string.
+```json
+{
+  "id": 1,
+  "nome": "Andre",
+  "email": "andre@origamid.com"
+}
+```
+
+- VALORES
+   - Os valores podem ser números, strings, boolean, arrays, objetos e null.
+```json
+{
+  "id": 1,
+  "faculdade": true,
+  "pertences": [
+    "lapis",
+    "caneta",
+    "caderno"
+  ],
+  "endereco": {
+    "cidade": "Rio de Janeiro",
+    "pais": "Brasil"
+  },
+  "casado": null
+}
+```
+
+- ARRAYS E OBJETOS
+   - É comum possuirmos array's com objetos em cada valor da array. Cuidado para não colocar vírgula no último item do objeto ou array.
+```json
+[
+  {
+    "id": 1,
+    "aula": "JavaScript",
+    "tempo": "25min"
+  },
+  {
+    "id": 2,
+    "aula": "HTML",
+    "tempo": "15min"
+  },
+  {
+    "id": 3,
+    "aula": "CSS",
+    "tempo": "10min"
+  }
+]
+```
+
+- JSON.PARSE() E JSON.STRINGIFY()
+   - JSON.parse() irá transformar um texto JSON em um objeto JavaScript. JSON.stringify() irá transformar um objeto JavaScript em uma string no formato JSON.
+
+```js
+const textoJSON = '{"id": 1, "titulo": "JavaScript", "tempo": "25min"}';
+const textoOBJ = JSON.parse(textoJSON);
+
+const enderecoOBJ = {
+  cidade: "Rio de Janeiro",
+  rua: "Ali Perto",
+  pais: "Brasil",
+  numero: 50,
+}
+const enderecoJSON = JSON.stringfy(enderecoOBJ);
+```
+
+- EXEMPLO REAL
+   - Podemos guardar por exemplo no localStorage, uma string como valor de uma propriedade. 
+   - E retornar essa string como um objeto.
+```js
+const configuracoes = {
+  player: "Google API",
+  tempo: 25.5,
+  aula: "2-1 JavaScript",
+  vitalicio: true,
+}
+
+localStorage.configuracoes = JSON.stringify(configuracoes);
+const pegarConfiguracoes = JSON.parse(localStorage.configuracoes);
+```
