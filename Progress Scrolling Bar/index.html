@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>PROGRESS SCROLLING BAR</title>
+	<link rel="stylesheet" href="">
+	<style>
+		/**
+* Progress Scrolling Bar
+*/
+.progress-container {
+  width: 100%;
+  height: 5px;
+  background: white;
+}
+
+.progress-bar {
+  height: 5px;
+  background: red;
+  width: 0%;
+  position: fixed;
+  top: 0;
+  z-index: 999999;
+}
+/**
+  * End Progress Bar ********************
+  */
+	</style>
+</head>
+<body style="margin-bottom: 2000px">
+
+		<!-- Start Scroll Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+    </div>
+    <!-- End Scroll Bar -->
+	
+
+
+	<script>
+		// When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+	</script>
+</body>
+</html>

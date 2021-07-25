@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+<body>
+
+	<div class="container col-lg-4 mt-5">
+		<form id="formCreditCard" action="" method="POST">
+
+          	<div id="div_credit_card"></div>
+
+          	<div class="form-group mb-2">
+                <br>
+                <input type="text" name="holder_name" placeholder="Credit Card Holder Name" required class="form-control" value="Fulano">
+            </div>
+
+            <div class="form-group mb-2">
+                <div class="input-group">
+                    <input type="text" name="card_number" placeholder="Credit Card Number" class="form-control" value="4242424242424242" required maxlength="19" pattern="[0-9]{13,16}">
+                    <div class="input-group-append"> <span class="input-group-text text-muted"> <i class="bi bi-credit-card h-100"></i> </span> </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-sm-8">
+                    <div class="form-group">
+                        <span class="hidden-xs">
+                            <h6 class="text-muted small">Expiration Date</h6>
+                        </span>
+                        <div class="input-group">
+                            <input type="number" placeholder="Month" name="month" class="form-control" value="12" required>
+                            <input type="number" placeholder="Year" name="year" class="form-control" required value="2025"> </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group mb-4">
+                        <label data-toggle="tooltip" title="Digite os 3 dígitos de segurança atrás do Credit Card.">
+                        <h6 class="text-muted small">CVV
+                            <i class="fa fa-question-circle d-inline"></i>
+                        </h6>
+                        <input type="text" name="cvv" required class="form-control" placeholder="Code CVV" value="757"> </div>
+                </div>
+            </div>
+            
+            <div>
+                <button type="submit" class="btn btn-outline-success btn-block shadow w-100">
+                    <i class="fa fa-credit-card"></i> PAY $ 100</span>
+                </button>
+            </div>
+		</form>
+	</div>
+
+	<script src="jquery.min.js"></script>
+    <script src="jquery.card.js"></script>
+    <script>
+        $('#formCreditCard').card({
+            container: '#div_credit_card',
+            formSelectors: {
+                numberInput: 'input[name="card_number"]',
+                nameInput: 'input[name="holder_name"]',
+                expiryInput: 'input[name="month"], input[name="year"]',
+                cvcInput: 'input[name="cvv"]'
+            }
+        });
+    </script>
+	
+</body>
+</html>

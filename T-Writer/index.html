@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>TWRITER</title>
+	<link rel="stylesheet" href="">
+	
+</head>
+<body>
+	<p id="p1"></p>
+	<p id="p2"></p>
+	<p id="p3"></p>
+	<p id="p4"></p>
+	
+	<script src="twriter.js"></script>
+	<script>
+		let p1 = document.querySelector("#p1");
+		let p2 = document.querySelector("#p2");
+		let p3 = document.querySelector("#p3");
+		let p4 = document.querySelector("#p4");
+
+		const writer = new Typewriter(p1, {
+		  loop: true,
+		  typeColor: 'blue'
+		})
+
+		writer
+		  .type('A simple syntax makes it easy.')
+		  .rest(500)
+		  .start()
+
+		const writer2 = new Typewriter(p2, {
+		  loop: true,
+		  typeSpeed: 80,
+		  deleteSpeed: 80,
+		  typeColor: 'red'
+		})
+
+		writer2
+		  .type('You can type')
+		  .rest(500)
+		  .changeOps({ deleteSpeed: 80 })
+		  .remove(4)
+		  .type('edit')
+		  .rest(500)
+		  .remove(4)
+		  .type('synchronize callbacks')
+		  .rest(500)
+		  .changeOps({ deleteSpeed: 20 })
+		  .remove(21)
+		  .type('change options on the go')
+		  .rest(500)
+		  .clear()
+		  .start()
+
+
+		const writer3 = new Typewriter(p3, {
+		  typeSpeed: 60 
+		})
+
+		const writer4 = new Typewriter(p4, { 
+		  typeSpeed: 60 
+		})
+
+		writer3
+		  .type('Combo typewriters to')
+		  .removeCursor()
+		  .then(writer4.start.bind(writer4))
+		  .start()
+
+		writer4
+		  .type("create complex effects")
+		  .rest(500)
+		  .clear()
+		  .changeTypeColor('red')
+		  .type("defy user expectations")
+		  .rest(500)
+		  .clear()
+		  .changeTypeColor('blue')
+		  .type("generate a custom loop")
+		  .rest(500)
+		  .clear()
+		  .changeTypeColor('black')
+		  .then(writer3.start.bind(writer3))
+	</script>
+</body>
+</html>
