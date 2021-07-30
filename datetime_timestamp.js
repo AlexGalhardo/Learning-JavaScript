@@ -21,3 +21,10 @@ function fixZero(time){
 console.log(now, fixZero(hours), fixZero(minutes), fixZero(seconds));
 console.log(new Date().toLocaleString());
 console.log(`${fixZero(day)}/${fixZero(month)}/${year} ${fixZero(hours)}:${fixZero(minutes)}:${fixZero(seconds)}`)
+
+// transformar timestamp to date time atual
+const timestamp3 = 1627683523;
+let date = new Date(timestamp3*1000).toLocaleDateString("pt-BR")
+let time = new Date(timestamp3*1000).toLocaleTimeString("pt-BR")
+let actualDateTime = `${date} ${time}`;
+console.log(actualDateTime);
