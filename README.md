@@ -1,3 +1,159 @@
+## console.
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Descrição</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>assert(expression, message)</code></td>
+<td>Envia uma mensagem quando <code>expression</code> é avaliado como <strong>falso</strong>.</td>
+<td><code>console.assert((x == 1), &quot;assert message: x != 1&quot;);</code></td>
+</tr>
+<tr>
+<td><code>clear()</code></td>
+<td>Limpa as mensagens da janela do console, incluindo mensagens de erro de script, e limpa também o script exibido na janela do console. Não limpa o script inserido no prompt de entrada do console.</td>
+<td><code>console.clear();</code></td>
+</tr>
+<tr>
+<td><code>count(title)</code></td>
+<td>Envia o número de vezes que o comando count foi chamado para a janela do console. Cada chamada do comando count é identificada exclusivamente pelo <code>title</code>opcional.<br><br> A entrada existente na janela do console é identificada pelo parâmetro <code>title</code> (se presente) e atualizada pelo comando count. Não é criada uma nova entrada.</td>
+<td><code>console.count();</code><br><br> <code>console.count(&quot;inner loop&quot;);</code></td>
+</tr>
+<tr>
+<td><code>debug(message)</code></td>
+<td>Envia <code>message</code> para a janela do console.<br><br> Esse comando é idêntico a console.log.<br><br> Os objetos transmitidos usando o comando são convertidos em um valor de cadeia de caracteres.</td>
+<td><code>console.debug(&quot;logging message&quot;);</code></td>
+</tr>
+<tr>
+<td><code>dir(object)</code></td>
+<td>Envia o objeto especificado para a janela do console e o exibe em um visualizador de objetos. Você pode usar o visualizador para inspecionar propriedades na janela do console.</td>
+<td><code>console.dir(obj);</code></td>
+</tr>
+<tr>
+<td><code>dirxml(object)</code></td>
+<td>Envia o nó XML <code>object</code> especificado para a janela do console e o exibe como uma árvore de nós XML.</td>
+<td><code>console.dirxaml(xmlNode);</code></td>
+</tr>
+<tr>
+<td><code>error(message)</code></td>
+<td>Envia <code>message</code> para a janela do console. O texto da mensagem está em vermelho e antecedido por um símbolo de erro.<br><br> Os objetos transmitidos usando o comando são convertidos em um valor de cadeia de caracteres.</td>
+<td><code>console.error(&quot;error message&quot;);</code></td>
+</tr>
+<tr>
+<td><code>group(title)</code></td>
+<td>Inicia um agrupamento das mensagens enviadas à janela do console e envia o <code>title</code> opcional como um rótulo de grupo. Os grupos podem ser aninhados e aparecer em um modo de exibição de árvore na janela do console.<br><br> Os comandos group* podem facilitar a exibição da saída da janela do console em alguns cenários, como quando um modelo de componente está em uso.</td>
+<td><code>console.group(&quot;Level 2 Header&quot;);</code> <br> <code>console.log(&quot;Level 2&quot;);</code> <br> <code>console.group();</code> <br> <code>console.log(&quot;Level 3&quot;);</code> <br> <code>console.warn(&quot;More of level 3&quot;);</code> <br> <code>console.groupEnd();</code> <br> <code>console.log(&quot;Back to level 2&quot;);</code> <br> <code>console.groupEnd();</code> <br> <code>console.debug(&quot;Back to the outer level&quot;);</code></td>
+</tr>
+<tr>
+<td><code>groupCollapsed(title)</code></td>
+<td>Inicia um agrupamento das mensagens enviadas à janela do console e envia o <code>title</code> opcional como um rótulo de grupo. Os grupos enviados usando <code>groupCollapsed</code> aparecem em uma exibição recolhida por padrão. Os grupos podem ser aninhados e aparecer em um modo de exibição de árvore na janela do console.</td>
+<td>O uso é o mesmo do comando <code>group</code>.<br><br> Consulte o exemplo do comando <code>group</code>.</td>
+</tr>
+<tr>
+<td><code>groupEnd()</code></td>
+<td>Encerra o grupo atual.<br><br> Requisitos:<br><br> Visual Studio 2013</td>
+<td>Consulte o exemplo do comando <code>group</code>.</td>
+</tr>
+<tr>
+<td><code>info(message)</code></td>
+<td>Envia <code>message</code> para a janela do console. A mensagem é prefaciada por um símbolo de informação.</td>
+<td><code>console.info(&quot;info message&quot;);</code><br><br> Para obter mais exemplos, confira <a href="#ConsoleLog" data-linktype="self-bookmark">Formatando a saída do console.log</a> mais adiante neste tópico.</td>
+</tr>
+<tr>
+<td><code>log(message)</code></td>
+<td>Envia <code>message</code> para a janela do console.<br><br> Se você transmitir um objeto, este comando o enviará para a janela do console e o exibirá num visualizador de objeto. Você pode usar o visualizador para inspecionar propriedades na janela do console.</td>
+<td><code>console.log(&quot;logging message&quot;);</code></td>
+</tr>
+<tr>
+<td><code>msIsIndependentlyComposed(element)</code></td>
+<td>Usado em aplicativos da Web. Sem suporte em aplicativos UWP usando JavaScript.</td>
+<td>Não há suporte.</td>
+</tr>
+<tr>
+<td><code>profile(reportName)</code></td>
+<td>Usado em aplicativos da Web. Sem suporte em aplicativos UWP usando JavaScript.</td>
+<td>Não há suporte.</td>
+</tr>
+<tr>
+<td><code>profileEnd()</code></td>
+<td>Usado em aplicativos da Web. Sem suporte em aplicativos UWP usando JavaScript.</td>
+<td>Não há suporte.</td>
+</tr>
+<tr>
+<td><code>select(element)</code></td>
+<td>Seleciona o HTML especificado <code>element</code> no <a href="quickstart-debug-html-and-css?view=vs-2017" data-linktype="relative-path">Explorador do DOM</a>.</td>
+<td>console.select(element);</td>
+</tr>
+<tr>
+<td><code>time (name)</code></td>
+<td>Inicia um temporizador que é identificado pelo parâmetro <code>name</code> opcional. Quando usado com <code>console.timeEnd</code>, calcula o tempo decorrido entre <code>time</code> e <code>timeEnd</code> e envia o resultado (medido em ms) ao console usando a cadeia de caracteres <code>name</code> como prefixo. Usado para habilitar a instrumentação de código do aplicativo para medir o desempenho.</td>
+<td><code>console.time(&quot;app start&quot;);  app.start();  console.timeEnd(&quot;app start&quot;);</code></td>
+</tr>
+<tr>
+<td><code>timeEnd(name)</code></td>
+<td>Interrompe um temporizador que é identificado pelo parâmetro <code>name</code> opcional. Consulte o comando <code>time</code> do console.</td>
+<td><code>console.time(&quot;app start&quot;); app.start(); console.timeEnd(&quot;app start&quot;);</code></td>
+</tr>
+<tr>
+<td><code>trace()</code></td>
+<td>Envia um rastreamento de pilha à janela do console. O rastreamento inclui a pilha de chamadas completa e informações como o nome do arquivo, o número da linha e o número da coluna.</td>
+<td><code>console.trace();</code></td>
+</tr>
+<tr>
+<td><code>warn(message)</code></td>
+<td>Envia <code>message</code> para a janela do console, prefaciada por um símbolo de aviso.<br><br> Os objetos transmitidos usando o comando são convertidos em um valor de cadeia de caracteres.</td>
+<td><code>console.warn(&quot;warning message&quot;);</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="miscellaneous-commands">Comandos variados</h2>
+<p>Esses comandos também estão disponíveis na janela do Console do JavaScript (não estão disponíveis no código).</p>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Descrição</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$0</code>, <code>$1</code>, <code>$2</code>, <code>$3</code>, <code>$4</code></td>
+<td>Retorna o elemento especificado para a janela do console. <code>$0</code> retorna o elemento selecionado atualmente no Explorador do DOM, <code>$1</code> retorna o elemento selecionado anteriormente no Explorador do DOM e assim por diante, até o quarto elemento selecionado anteriormente.</td>
+<td>U$3</td>
+</tr>
+<tr>
+<td><code>$(id)</code></td>
+<td>Retorna um elemento por ID. Este é um comando de atalho para <code>document.getElementById(id)</code>, em que <code>id</code> é uma cadeia de caracteres que representa a ID do elemento.</td>
+<td><code>$(&quot;contenthost&quot;)</code></td>
+</tr>
+<tr>
+<td><code>$$(selector)</code></td>
+<td>Retorna uma matriz de elementos que correspondem ao seletor especificado usando a sintaxe do seletor de CSS. Este é um comando de atalho para <code>document.querySelectorAll()</code>.</td>
+<td><code>$$(&quot;.itemlist&quot;)</code></td>
+</tr>
+<tr>
+<td><code>cd()</code><br><br> <code>cd(window)</code></td>
+<td>Permite que você altere o contexto de avaliação da expressão, da janela de nível superior padrão da página para a janela do quadro especificado. Chamar <code>cd()</code> sem parâmetros reverte o contexto para a janela de nível superior.</td>
+<td><code>cd();</code><br><br> <code>cd(myframe);</code></td>
+</tr>
+<tr>
+<td><code>select(element)</code></td>
+<td>Seleciona o elemento especificado no <a href="quickstart-debug-html-and-css?view=vs-2017" data-linktype="relative-path">Explorador do DOM</a>.</td>
+<td><code>select(document.getElementById(&quot;element&quot;));</code><br><br> <code>select($(&quot;element&quot;));</code><br><br> <code>select($1);</code></td>
+</tr>
+<tr>
+<td><code>dir(object)</code></td>
+<td>Retorna um visualizador para o objeto especificado. Você pode usar o visualizador para inspecionar propriedades na janela do console.</td>
+<td><code>dir(obj);</code></td>
+</tr>
+</tbody>
+</table>
+
 ## JavaScript Básico
 
 - VARIÁVEIS
