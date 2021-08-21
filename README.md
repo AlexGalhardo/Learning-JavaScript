@@ -154,6 +154,24 @@
 </tbody>
 </table>
 
+## Cookies, LocalStorage, SessionStorage
+
+![storage](https://user-images.githubusercontent.com/19540357/130307198-79c18339-67d7-492e-95a6-661342dfc609.png)
+```js
+localSotrage.setItem('name', 'alex')
+localSotrage.getItem('name') // alex
+localStorage.removeItem('name')
+localStorage.clear()
+
+sessionStorage.setItem('name', 'John')
+sessionStorage.getItem('name') // John
+sessionStorage.removeItem('name')
+sessionStorage.clear()
+
+document.cookie = `name=Bob; expires=${new Date(2021, 0, 1).toUTCString()}`
+console.log(document.cookie)
+```
+
 ## JavaScript Básico
 
 - VARIÁVEIS
