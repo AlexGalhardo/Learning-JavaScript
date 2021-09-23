@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banner Rotativo</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#slider {
+    width: 80%;
+    max-width: 500px;
+    height: 25vw;
+    max-height: 150px;
+
+    position: relative;
+}
+
+#slider img{
+    opacity: 0;
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: opacity 800ms;
+}
+
+#slider img.selected { 
+    opacity: 1;
+}
+    </style>
+</head>
+<body>
+    <div id="slider">
+        <img class="selected" src="https://images.unsplash.com/photo-1530432999454-016a47c78af3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Image1">
+        <img src="https://images.unsplash.com/photo-1562514947-bf9cf8e45d4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Image2">
+        <img src="https://images.unsplash.com/photo-1562526109-878e3d276ceb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Image3">
+        <img src="https://images.unsplash.com/photo-1504870444519-3c678061c754?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Image4">
+    </div>
+    
+    
+    <script>
+        let time = 1000,
+            currentImageIndex = 0,
+            images = document
+                        .querySelectorAll("#slider img")
+            max = images.length;
+
+        function nextImage() {
+
+            images[currentImageIndex]
+                .classList.remove("selected")
+
+            currentImageIndex++
+
+            if(currentImageIndex >= max)
+                currentImageIndex = 0
+
+            images[currentImageIndex]
+                .classList.add("selected")
+        }
+
+        function start() {
+            setInterval(() => {
+                // troca de image
+                nextImage()
+            }, time)
+        }
+
+        window.addEventListener("load", start)
+    </script>
+
+    
+</body>
+</html>
