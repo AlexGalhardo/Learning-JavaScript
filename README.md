@@ -1,3 +1,9 @@
+### Learning Typescript: https://github.com/AlexGalhardo/Learning-TypeScript
+
+### Learning ReactJS & NextJS: https://github.com/AlexGalhardo/Learning-ReactJS 
+
+### Learning Redux: https://github.com/AlexGalhardo/Curso-Redux-Origamid
+
 ## console.
 <table>
 <thead>
