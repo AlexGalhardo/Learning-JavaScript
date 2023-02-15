@@ -306,6 +306,10 @@ function find(array, cb) {
 }
 ```
 
+## Typescript
+- https://www.totaltypescript.com/
+- https://www.origamid.com/curso/typescript-para-iniciantes/
+
 ## JavaScript Básico
 
 - VARIÁVEIS
