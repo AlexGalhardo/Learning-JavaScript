@@ -4,6 +4,14 @@
 
 ### Learning Redux: https://github.com/AlexGalhardo/Curso-Redux-Origamid
 
+### Async Await JS
+- https://www.origamid.com/slide/javascript-completo-es6/#/0101-javascript-completo-es6/10
+
+
+https://github.com/AlexGalhardo/Learning-JavaScript/assets/19540357/b2665c40-35e9-4e0b-b0fc-2567939a431c
+
+
+
 ## console.
 <table>
 <thead>
